@@ -1,0 +1,303 @@
+:root {
+  --maroon-900: #3A0F14;
+  --maroon-700: #5C1A22;
+  --maroon-600: #7A2530;
+  --maroon-100: #F4E4E2;
+  --gold-500: #B8873A;
+  --gold-100: #F5EBD8;
+  --cream: #FBF7F0;
+  --ink: #2B2320;
+  --ink-muted: #8A7F73;
+  --border: #E6DCCB;
+  --green-600: #2F7A4F;
+  --red-600: #B23B3B;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--maroon-900);
+  color: var(--maroon-100);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+}
+
+.sidebar h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2px;
+  padding: 0 10px;
+}
+
+.sidebar .subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold-500);
+  padding: 0 10px;
+  margin-bottom: 24px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--maroon-100);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  background: var(--gold-500);
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 40px;
+}
+
+h2.page-title {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--maroon-900);
+}
+
+.page-subtitle {
+  margin: 0 0 28px;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-card .stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.stat-card .stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--maroon-900);
+  margin-top: 6px;
+}
+
+.stat-card.warn .stat-value {
+  color: var(--red-600);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+tr.low-stock td {
+  color: var(--red-600);
+  font-weight: 600;
+}
+
+input, select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px var(--gold-100);
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin-bottom: 5px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--maroon-700);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--maroon-600);
+}
+
+.btn-gold {
+  background: var(--gold-500);
+  color: #fff;
+}
+.btn-gold:hover:not(:disabled) {
+  background: #a5762f;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--maroon-700);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--maroon-100);
+}
+
+.btn-danger {
+  background: var(--red-600);
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-low { background: #FCE9E9; color: var(--red-600); }
+.badge-ok { background: #E7F3EB; color: var(--green-600); }
+
+.error-banner {
+  background: #FCE9E9;
+  color: var(--red-600);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 35, 32, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(43, 35, 32, 0.25);
+}
+
+/* Silent printing sends whatever's on screen to the printer with no dialog
+   to catch mistakes, so this scoping is load-bearing: without it, printing
+   a receipt would print the entire app window (sidebar, buttons, all). */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt, .receipt * {
+    visibility: visible;
+  }
+  .receipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+  }
+}
+
+.scanner-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  background: var(--gold-100);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+}
